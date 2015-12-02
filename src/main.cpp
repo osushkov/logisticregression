@@ -103,7 +103,7 @@ double evaluatePerformance(const VectorN &learnedModel, SamplesGenerator *sample
 }
 
 int main() {
-  auto noise = unique_ptr<RandomDistribution> {new GaussianDistribution {0.0}};
+  auto noise = unique_ptr<RandomDistribution> {new GaussianDistribution {5.0}};
   auto coeff = unique_ptr<VectorN> {new VectorN {{1.0, 50.0, 10.0, -20, 0.1}}};
   auto featureRange = unique_ptr<vector<Range>> {new vector<Range> {}};
   featureRange->push_back(Range(1.0)); // this is just the constant feature.
