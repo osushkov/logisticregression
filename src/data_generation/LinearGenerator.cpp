@@ -30,6 +30,8 @@ public:
 
 private:
 
+  // For logistic regression, we will categorise a sample point depending on which side
+  // of the classification boundary it falls. This is simply whether the linear product is >0
   SamplePoint generateSample(void) const {
     VectorN featureVals {(unsigned) featureRange->size()};
     for (unsigned i = 0; i < featureRange->size(); i++) {
@@ -37,7 +39,7 @@ private:
     }
 
     double fval = coefficients->dotProduct(featureVals) + noise->sample();
-    return SamplePoint {featureVals, fval};
+    return SamplePoint {featureVals, fval > 0.0 ? 1.0 : 0.0};
   }
 
 };

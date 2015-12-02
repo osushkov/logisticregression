@@ -7,13 +7,13 @@
 
 struct SamplePoint {
   VectorN features;
-  double value;
+  double category; // 0 or 1
 
-  SamplePoint(const VectorN &features, double value) :
-    features(features), value(value) {}
+  SamplePoint(const VectorN &features, double category) :
+    features(features), category(category) {}
 };
 
 inline std::ostream& operator<<(std::ostream& stream, const SamplePoint& v) {
-  stream << v.value << " : " << v.features;
+  stream << v.category << " : " << v.features;
   return stream;
 }
