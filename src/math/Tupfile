@@ -1,0 +1,4 @@
+include_rules
+: foreach *.cpp |> $(CC) $(CCFLAGS) -c %f -o %o |> %B.o
+: *.o |> ar crs %o %f |> math.a
+

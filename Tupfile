@@ -1,0 +1,2 @@
+include_rules
+: src/*.o src/math/math.a src/noise_generation/noise_generation.a src/data_generation/data_generation.a |> $(CC) %f -o %o $(CLFLAGS) |> logistic_regression
